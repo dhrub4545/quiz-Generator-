@@ -94,9 +94,9 @@ flowchart TD
     Server --> Validator
     Validator --> PromptBuilder
     PromptBuilder -->|"Strict Tuple Prompt"| Gemini
-    Gemini -->>|"Raw Generative Output"| Parser
+    Gemini -->|"Raw Generative Output"| Parser
     Parser --> SchemaChecker
-    SchemaChecker -->>|"Validated MCQs Payload"| UI
+    SchemaChecker -->|"Validated MCQs Payload"| UI
     UI --> QuizUI
     QuizUI --> ResultsUI
 ```
@@ -125,7 +125,7 @@ sequenceDiagram
     alt Parse Succeeded
         Backend->>Backend: Array & Distractor Validation
     else Parse Throws SyntaxError
-        Backend->>Backend: Attempt Stage 2: Regex Isolation (```json ... ```)
+        Backend->>Backend: Attempt Stage 2: Regex Isolation (extract JSON markdown fence)
         Backend->>Backend: Fallback JSON.parse()
     end
 
