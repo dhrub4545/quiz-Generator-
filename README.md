@@ -5,13 +5,13 @@
 <img src="./src/assets/react.svg" alt="React & AI Logo" width="120" />
 
 ### Foundational Algorithmic Proof-of-Concept for Generative MCQ Synthesis
-*The original core engine that pioneered zero-shot psychometric multiple-choice question generation with Google Gemini 1.5 Flash.*
+*The original core engine that pioneered zero-shot psychometric multiple-choice question generation with Google Gemini 2.5 Flash.*
 
 [![Prototype Status](https://img.shields.io/badge/Status-Foundational_Prototype-orange?style=for-the-badge&logo=codeforces&logoColor=white)](https://github.com)
 [![React](https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Express](https://img.shields.io/badge/Express-4.18+-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
-[![Google Gemini](https://img.shields.io/badge/Google_Gemini-1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-2.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 </div>
@@ -36,7 +36,7 @@
 | Repository | Role | Core Technology | Link |
 | :--- | :--- | :--- | :--- |
 | **quiz-Generator-** (This Repo) | Algorithmic Prototype & Core Generation Engine | Express / Google Generative AI / Vite Prototype | [quiz-Generator-](file:///c:/Users/pandi/OneDrive/Desktop/github/quiz-Generator-) |
-| **quiz-Generator--main** | Enterprise AI MCQ Backend & Full-Stack Platform | React 19 / Express 5 / MongoDB / Gemini 1.5 Flash | [quiz-Generator--main](file:///c:/Users/pandi/OneDrive/Desktop/github/quiz-Generator--main) |
+| **quiz-Generator--main** | Enterprise AI MCQ Backend & Full-Stack Platform | React 19 / Express 5 / MongoDB / Gemini 2.5 Flash | [quiz-Generator--main](file:///c:/Users/pandi/OneDrive/Desktop/github/quiz-Generator--main) |
 | **mcq-main-frontend** | Production Web Exam Center & Analytics Portal | React 19 / Vite / Recharts / Vercel Host | [mcq-main-frontend](file:///c:/Users/pandi/OneDrive/Desktop/github/mcq-main-frontend) |
 | **DCP-QUIZZY** | Medical Mobile App Client & Licensing Engine | React Native / Expo 57 / Express / MongoDB | [DCP-QUIZZY](file:///c:/Users/pandi/OneDrive/Desktop/github/DCP-QUIZZY) |
 
@@ -57,7 +57,7 @@ The successful validation of this core engine directly catalyzed the production 
 
 ## 🚀 Key Features
 
-- 🧠 **Zero-Shot Gemini 1.5 Flash MCQ Synthesis**: Prompt-engineered engine generating between 1 and 50 rigorous questions per prompt.
+- 🧠 **Zero-Shot Gemini 2.5 Flash MCQ Synthesis**: Prompt-engineered engine generating between 1 and 50 rigorous questions per prompt.
 - 🛡️ **Dual-Stage Defensive Parser**: Resilient parsing pipeline that handles clean JSON strings as well as wrapped Markdown fences without runtime crashes.
 - 📐 **Rigorous Schema Validation**: Enforces string types for questions, exactly four distractor options, and zero-indexed integer bounds `[0..3]`.
 - ⚡ **Lightweight Express Microservice**: Minimalist Node.js API server (`mcq-backend/server.js`) optimized for rapid experimentation and prompt testing.
@@ -87,7 +87,7 @@ flowchart TD
     end
 
     subgraph AICloud["External AI Foundation"]
-        Gemini["Google Gemini 1.5 Flash API"]
+        Gemini["Google Gemini 2.5 Flash API"]
     end
 
     UI -->|"POST /api/generate-mcqs { prompt, count }"| Server
@@ -113,7 +113,7 @@ sequenceDiagram
     actor Researcher as Curriculum Designer / Tester
     participant Web as React Prototype UI
     participant Backend as Express Microservice
-    participant Gemini as Google Gemini 1.5 Flash
+    participant Gemini as Google Gemini 2.5 Flash
 
     Researcher->>Web: Enters Prompt ("Neuroanatomy Cranial Nerves", Count: 10)
     Web->>Backend: POST /api/generate-mcqs { prompt, count }
@@ -144,7 +144,7 @@ sequenceDiagram
 | **UI Framework** | Material-UI (MUI) | `^7.3.1` | Baseline component styling, input fields, and dialogs |
 | **Styling** | Emotion | `^11.14` | CSS-in-JS style rules and theme propagation |
 | **Backend Framework** | Express.js | `^4.18+` | Lightweight microservice handling HTTP POST requests |
-| **Generative AI** | `@google/generative-ai` | `^0.24.1` | Google Gemini 1.5 Flash API connector |
+| **Generative AI** | `@google/generative-ai` | `^0.24.1` | Google Gemini 2.5 Flash API connector |
 | **Parsing Utilities** | Custom Regex / Native JSON | ECMAScript 2023 | Resilient two-stage markdown and JSON extraction |
 | **HTTP Communication** | Axios / Fetch API | Standard | Request dispatching between client and local server |
 
